@@ -5,6 +5,7 @@ import WaveDivider from "@/components/shared/WaveDivider";
 import { Icon } from "@/components/shared/icons";
 import { initiatives } from "@/data/initiatives";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { t } from "@/i18n/resolvers";
 
 export default function InitiativesContent() {
   const { locale } = useLanguage();
@@ -35,15 +36,13 @@ export default function InitiativesContent() {
             <div className="container-x py-20 md:py-24 lg:py-28">
               <div className="max-w-4xl">
                 <span className="eyebrow-light mb-5 md:mb-6">
-                  ACTION • COMMUNITY • IMPACT
+                  {t("init.heroEyebrow", locale)}
                 </span>
                 <h1 className="heading-xl text-balance text-white">
-                  Our Initiatives
+                  {t("init.heroTitle", locale)}
                 </h1>
                 <p className="body-lg mt-6 max-w-2xl text-ocean-100/85">
-                  Purpose-built programs designed to protect marine ecosystems,
-                  empower communities, and drive lasting environmental change
-                  across Saudi Arabia&rsquo;s coastlines and waters.
+                  {t("init.heroBody", locale)}
                 </p>
               </div>
             </div>
@@ -120,7 +119,7 @@ export default function InitiativesContent() {
                         <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-ocean-100 text-ocean-500">
                           <Icon name="eye" size={18} />
                         </span>
-                        Overview
+                        {t("common.overview", locale)}
                       </h3>
                       <p className="body-base text-ocean-800/75 leading-relaxed">
                         {initiative.overview[locale]}
@@ -132,7 +131,7 @@ export default function InitiativesContent() {
                         <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-ocean-100 text-ocean-500">
                           <Icon name="target" size={18} />
                         </span>
-                        Purpose
+                        {t("common.purpose", locale)}
                       </h3>
                       <p className="body-base text-ocean-800/75 leading-relaxed">
                         {initiative.purpose[locale]}
@@ -144,7 +143,7 @@ export default function InitiativesContent() {
                         <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-ocean-100 text-ocean-500">
                           <Icon name="briefcase" size={18} />
                         </span>
-                        Activities
+                        {t("common.activities", locale)}
                       </h3>
                       <ul className="flex flex-col gap-3.5">
                         {initiative.activities.map((activity, i) => (
@@ -164,7 +163,7 @@ export default function InitiativesContent() {
                     <div className="lg:sticky lg:top-24 flex flex-col gap-6">
                       <div className="card-elevated p-6 md:p-7 flex flex-col gap-5">
                         <div className="flex flex-col gap-2">
-                          <span className="eyebrow">RELATED AREA OF WORK</span>
+                          <span className="eyebrow">{t("common.relatedArea", locale)}</span>
                           <div className="flex items-start gap-3">
                             <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-ocean-500/10 text-ocean-600">
                               <Icon name="globe" size={20} />

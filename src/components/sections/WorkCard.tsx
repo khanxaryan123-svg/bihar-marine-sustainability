@@ -35,6 +35,7 @@ export default function WorkCard({
   const generatedSrc = buildImageUrl(imagePrompt, imageSize);
   const src = localImage ?? generatedSrc;
   const posterSrc = localImage ?? undefined;
+  const isTraeImage = Boolean(src && src.includes("trae.ai"));
 
   return (
     <Link
@@ -66,6 +67,20 @@ export default function WorkCard({
               />
             )}
           </>
+        ) : isTraeImage ? (
+          <div className="img-zoom-target absolute inset-0 flex items-center justify-center bg-gradient-to-b from-ocean-50 to-white text-ocean-700 p-6 text-center">
+            <div>
+              <p className="text-sm md:text-base">The image is generating…</p>
+              <p className="text-xs md:text-sm text-ocean-600/80 mt-2">Please refresh page to preview</p>
+            </div>
+          </div>
+        ) : localImage && localImage.startsWith("/") ? (
+          <img
+            src={localImage}
+            alt={imageAlt}
+            aria-hidden={false}
+            className="img-zoom-target absolute inset-0 h-full w-full object-cover"
+          />
         ) : (
           <Image
             src={src}

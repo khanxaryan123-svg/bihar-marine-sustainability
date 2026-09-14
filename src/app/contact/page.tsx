@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import CTAButton from "@/components/shared/CTAButton";
 import WaveDivider from "@/components/shared/WaveDivider";
 import { Icon } from "@/components/shared/icons";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { t } from "@/i18n/resolvers";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -15,6 +17,8 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const { locale } = useLanguage();
+
   return (
     <div id="main-contact">
       <section className="relative w-full overflow-hidden bg-ocean-900">
@@ -41,13 +45,13 @@ export default function ContactPage() {
             <div className="container-x py-20 md:py-24 lg:py-28">
               <div className="max-w-4xl">
                 <span className="eyebrow-light mb-5 md:mb-6">
-                  GET IN TOUCH • LET&rsquo;S CONNECT
+                  {t("contact.heroEyebrow", locale)}
                 </span>
                 <h1 className="heading-xl text-balance text-white">
-                  Contact Us
+                  {t("contact.heroTitle", locale)}
                 </h1>
                 <p className="body-lg mt-6 max-w-3xl text-ocean-100/85">
-                  Get in touch with Bihar Marine Sustainability to explore volunteering, partnerships, collaboration and marine environmental initiatives.
+                  {t("contact.heroBody", locale)}
                 </p>
               </div>
             </div>
@@ -61,16 +65,12 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
             <div className="lg:col-span-2 flex flex-col gap-8">
               <div className="flex flex-col gap-5">
-                <span className="eyebrow">HOW TO REACH US</span>
+                <span className="eyebrow">{t("contact.infoHeading", locale)}</span>
                 <h2 className="heading-md text-ocean-900">
-                  We Welcome Your Inquiry
+                  {t("contact.infoHeading", locale)}
                 </h2>
                 <p className="body-base text-ocean-800/70 max-w-md">
-                  Whether you are interested in volunteering, exploring a
-                  strategic partnership, discussing research collaboration,
-                  learning about our community programs, or asking a general
-                  question about our marine environmental work — please use the
-                  adjacent form to send us a message and our team will follow up.
+                  {t("contact.infoBody", locale)}
                 </p>
               </div>
 
@@ -165,17 +165,17 @@ export default function ContactPage() {
                 <form className="flex flex-col gap-5 md:gap-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                     <div className="flex flex-col gap-2">
-                      <label
-                        htmlFor="name"
-                        className="text-sm font-semibold text-ocean-900"
-                      >
-                        Name
-                      </label>
+                        <label
+                          htmlFor="name"
+                          className="text-sm font-semibold text-ocean-900"
+                        >
+                          {t("field.name", locale)}
+                        </label>
                       <input
                         id="name"
                         name="name"
                         type="text"
-                        placeholder="Enter your full name"
+                        placeholder={t("placeholder.name", locale)}
                         className="h-11 w-full rounded-xl border border-ocean-100 bg-white px-4 text-sm text-ocean-900 placeholder:text-ocean-800/40 focus:border-ocean-500 focus:outline-none focus:ring-2 focus:ring-ocean-500/20 transition-colors"
                       />
                     </div>
@@ -185,13 +185,13 @@ export default function ContactPage() {
                         htmlFor="email"
                         className="text-sm font-semibold text-ocean-900"
                       >
-                        Email
+                        {t("field.email", locale)}
                       </label>
                       <input
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="Enter your email address"
+                        placeholder={t("placeholder.email", locale)}
                         className="h-11 w-full rounded-xl border border-ocean-100 bg-white px-4 text-sm text-ocean-900 placeholder:text-ocean-800/40 focus:border-ocean-500 focus:outline-none focus:ring-2 focus:ring-ocean-500/20 transition-colors"
                       />
                     </div>
@@ -203,13 +203,13 @@ export default function ContactPage() {
                         htmlFor="phone"
                         className="text-sm font-semibold text-ocean-900"
                       >
-                        Phone
+                        {t("field.phone", locale)}
                       </label>
                       <input
                         id="phone"
                         name="phone"
                         type="tel"
-                        placeholder="Enter your phone number"
+                        placeholder={t("placeholder.phone", locale)}
                         className="h-11 w-full rounded-xl border border-ocean-100 bg-white px-4 text-sm text-ocean-900 placeholder:text-ocean-800/40 focus:border-ocean-500 focus:outline-none focus:ring-2 focus:ring-ocean-500/20 transition-colors"
                       />
                     </div>
@@ -219,46 +219,46 @@ export default function ContactPage() {
                         htmlFor="organization"
                         className="text-sm font-semibold text-ocean-900"
                       >
-                        Organization
+                        {t("field.organization", locale)}
                       </label>
                       <input
                         id="organization"
                         name="organization"
                         type="text"
-                        placeholder="Enter your organization name"
+                        placeholder={t("placeholder.organization", locale)}
                         className="h-11 w-full rounded-xl border border-ocean-100 bg-white px-4 text-sm text-ocean-900 placeholder:text-ocean-800/40 focus:border-ocean-500 focus:outline-none focus:ring-2 focus:ring-ocean-500/20 transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label
-                      htmlFor="subject"
-                      className="text-sm font-semibold text-ocean-900"
-                    >
-                      Subject
-                    </label>
+                      <label
+                        htmlFor="subject"
+                        className="text-sm font-semibold text-ocean-900"
+                      >
+                        {t("field.subject", locale)}
+                      </label>
                     <input
                       id="subject"
                       name="subject"
                       type="text"
-                      placeholder="What is this message about?"
+                        placeholder={t("placeholder.subject", locale)}
                       className="h-11 w-full rounded-xl border border-ocean-100 bg-white px-4 text-sm text-ocean-900 placeholder:text-ocean-800/40 focus:border-ocean-500 focus:outline-none focus:ring-2 focus:ring-ocean-500/20 transition-colors"
                     />
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label
-                      htmlFor="message"
-                      className="text-sm font-semibold text-ocean-900"
-                    >
-                      Message
-                    </label>
+                      <label
+                        htmlFor="message"
+                        className="text-sm font-semibold text-ocean-900"
+                      >
+                        {t("field.message", locale)}
+                      </label>
                     <textarea
                       id="message"
                       name="message"
                       rows={6}
-                      placeholder="Tell us more about your inquiry, interest or proposal..."
+                        placeholder={t("placeholder.message", locale)}
                       className="min-h-[140px] w-full resize-y rounded-xl border border-ocean-100 bg-white px-4 py-3 text-sm text-ocean-900 placeholder:text-ocean-800/40 focus:border-ocean-500 focus:outline-none focus:ring-2 focus:ring-ocean-500/20 transition-colors"
                     />
                   </div>

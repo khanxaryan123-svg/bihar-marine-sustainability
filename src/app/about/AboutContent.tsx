@@ -14,6 +14,7 @@ import {
   aboutFutureDirection,
 } from "@/data/visionMissionValues";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { t } from "@/i18n/resolvers";
 
 const problemIcons: IconKey[] = ["tree", "shield", "fish", "leaf", "users"];
 const objectiveIcons: IconKey[] = [
@@ -26,6 +27,8 @@ const objectiveIcons: IconKey[] = [
 ];
 
 export default function AboutContent() {
+  const { locale } = useLanguage();
+
   const { locale } = useLanguage();
 
   return (
@@ -54,16 +57,14 @@ export default function AboutContent() {
             <div className="container-x py-20 md:py-24">
               <div className="max-w-4xl">
                 <span className="eyebrow-light mb-5 md:mb-6">
-                  OUR STORY
-                </span>
-                <h1 className="heading-xl text-balance text-white">
-                  About Us
-                </h1>
-                <p className="body-lg mt-6 max-w-2xl text-ocean-100/85">
-                  A non-profit organization dedicated to protecting the marine
-                  environment, conserving natural resources, and building a
-                  sustainable relationship between Saudi communities and the sea.
-                </p>
+                    {t("about.heroEyebrow", locale)}
+                  </span>
+                  <h1 className="heading-xl text-balance text-white">
+                    {t("about.heroTitle", locale)}
+                  </h1>
+                  <p className="body-lg mt-6 max-w-2xl text-ocean-100/85">
+                    {t("about.heroBody", locale)}
+                  </p>
               </div>
             </div>
           </div>
@@ -76,8 +77,8 @@ export default function AboutContent() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
             <div className="order-2 lg:order-1">
               <SectionHeader
-                eyebrow="WHO WE ARE"
-                heading="Who We Are"
+                eyebrow={t("about.whoEyebrow", locale)}
+                heading={t("about.whoHeading", locale)}
                 className="mb-8"
               />
               <p className="body-lg mb-6">{aboutText[locale]}</p>
@@ -119,9 +120,9 @@ export default function AboutContent() {
         <div className="container-x">
           <SectionHeader
             align="center"
-            eyebrow="OUR FOUNDATION"
-            heading="Vision, Mission & Values"
-            subtitle="Guided by a clear purpose and shared principles, we work every day to protect marine ecosystems, empower communities, and build a sustainable blue future for the Kingdom."
+            eyebrow={t("about.vmEyebrow", locale)}
+            heading={t("about.vmHeading", locale)}
+            subtitle={t("about.vmSubtitle", locale)}
             className="mb-12 md:mb-16"
           />
           <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
@@ -143,8 +144,8 @@ export default function AboutContent() {
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
             <div>
               <SectionHeader
-                eyebrow="THE CHALLENGE"
-                heading="Problems We Address"
+                eyebrow={t("about.problemEyebrow", locale)}
+                heading={t("about.problemHeading", locale)}
                 subtitle={whyMarineMatters.lead[locale]}
                 className="mb-10"
               />
@@ -183,9 +184,9 @@ export default function AboutContent() {
         <div className="container-x">
           <SectionHeader
             align="center"
-            eyebrow="OUR COMMITMENT"
-            heading="Objectives"
-            subtitle="Concrete goals that guide every initiative, program and partnership we pursue across the Kingdom."
+            eyebrow={t("about.objEyebrow", locale)}
+            heading={t("about.objHeading", locale)}
+            subtitle={t("about.objSubtitle", locale)}
             className="mb-12 md:mb-16"
           />
           <div className="grid gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3">

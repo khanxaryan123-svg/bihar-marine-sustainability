@@ -5,6 +5,7 @@ import WaveDivider from "@/components/shared/WaveDivider";
 import { Icon } from "@/components/shared/icons";
 import { impactAreas } from "@/data/impact";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { t } from "@/i18n/resolvers";
 
 export default function ImpactContent() {
   const { locale } = useLanguage();
@@ -35,13 +36,13 @@ export default function ImpactContent() {
             <div className="container-x py-20 md:py-24 lg:py-28">
               <div className="max-w-4xl">
                 <span className="eyebrow-light mb-5 md:mb-6">
-                  LASTING CHANGE • ECOSYSTEMS • COMMUNITIES
+                  {t("impact.heroEyebrow", locale)}
                 </span>
                 <h1 className="heading-xl text-balance text-white">
-                  Our Impact
+                  {t("impact.heroTitle", locale)}
                 </h1>
                 <p className="body-lg mt-6 max-w-2xl text-ocean-100/85">
-                  Creating lasting change for marine ecosystems and communities.
+                  {t("impact.heroBody", locale)}
                 </p>
               </div>
             </div>
@@ -114,7 +115,7 @@ export default function ImpactContent() {
 
                     <div className="flex flex-col gap-2">
                       <span className="eyebrow">
-                        {isEven ? "AREA OF IMPACT" : "OUTCOME AREA"}
+                        {isEven ? t("impact.impactArea", locale) : t("impact.outcomeArea", locale)}
                       </span>
                       <h2 className="heading-md md:heading-lg text-balance text-ocean-900">
                         {area.title[locale]}

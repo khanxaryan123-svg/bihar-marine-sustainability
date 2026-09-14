@@ -6,6 +6,7 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { Icon } from "@/components/shared/icons";
 import { areasOfWork } from "@/data/areasOfWork";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { t } from "@/i18n/resolvers";
 
 export default function OurWorkContent() {
   const { locale } = useLanguage();
@@ -13,7 +14,7 @@ export default function OurWorkContent() {
   return (
     <div id="main-our-work">
       <section className="relative w-full overflow-hidden bg-ocean-900">
-        <div className="relative min-h-[65vh] w-full">
+          <div className="relative min-h-[65vh] w-full">
           <video
             autoPlay
             muted
@@ -36,13 +37,13 @@ export default function OurWorkContent() {
             <div className="container-x py-20 md:py-24">
               <div className="max-w-4xl">
                 <span className="eyebrow-light mb-5 md:mb-6">
-                  SEVEN PILLARS • STRATEGIC ACTION
+                  {t("work.heroEyebrow", locale)}
                 </span>
                 <h1 className="heading-xl text-balance text-white">
-                  Our Areas of Work
+                  {t("work.heroTitle", locale)}
                 </h1>
                 <p className="body-lg mt-6 max-w-2xl text-ocean-100/85">
-                  Seven key areas for a sustainable marine future.
+                  {t("work.heroBody", locale)}
                 </p>
               </div>
             </div>
