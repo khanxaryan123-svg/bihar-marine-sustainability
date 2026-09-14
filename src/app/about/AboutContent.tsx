@@ -29,8 +29,6 @@ const objectiveIcons: IconKey[] = [
 export default function AboutContent() {
   const { locale } = useLanguage();
 
-  const { locale } = useLanguage();
-
   return (
     <div id="main-about">
       <section className="relative w-full overflow-hidden bg-ocean-900">
