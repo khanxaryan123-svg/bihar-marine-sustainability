@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { WaveLogo, Search } from "@/components/shared/icons";
+import { Search } from "@/components/shared/icons";
 import LanguageToggle from "@/components/shared/LanguageToggle";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { t } from "@/i18n/resolvers";
@@ -37,8 +38,14 @@ export default function Header() {
     >
       <div className="container-x flex h-16 md:h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <span className="inline-flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-xl bg-ocean-500 text-white shadow-[0_6px_20px_-8px_rgba(24,199,200,0.6)] transition-transform group-hover:scale-105">
-            <WaveLogo size={22} />
+          <span className="inline-flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-xl bg-ocean-500 text-white shadow-[0_6px_20px_-8px_rgba(24,199,200,0.6)] transition-transform group-hover:scale-105 overflow-hidden">
+            <Image
+              src="/logo.png"
+              alt={t("brand.primary", locale)}
+              width={44}
+              height={44}
+              className="h-full w-full object-cover"
+            />
           </span>
           <div className="flex flex-col leading-tight">
             <span className="text-sm md:text-base font-bold tracking-tight text-ocean-900">

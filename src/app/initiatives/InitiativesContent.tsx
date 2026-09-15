@@ -105,7 +105,7 @@ export default function InitiativesContent() {
                           {initiative.relatedAreaLabel[locale]}
                         </span>
                       </div>
-                      <h2 className="heading-md md:heading-lg text-balance text-white max-w-4xl">
+                      <h2 className="heading-md md:heading-lg text-balance !text-white max-w-4xl">
                         {initiative.title[locale]}
                       </h2>
                     </div>
