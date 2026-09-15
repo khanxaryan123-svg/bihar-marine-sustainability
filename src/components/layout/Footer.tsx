@@ -17,13 +17,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group w-fit">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ocean-500 text-white shadow-[0_6px_20px_-8px_rgba(24,199,200,0.6)] transition-transform group-hover:scale-105 overflow-hidden">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl transition-transform group-hover:scale-105 overflow-hidden">
                 <Image
                   src="/logo.png"
                   alt={t("brand.primary", locale)}
                   width={44}
                   height={44}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                 />
               </span>
               <div className="flex flex-col leading-tight">
